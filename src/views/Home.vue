@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<section>
+		<h1>Home</h1>
+    <button @click="user">Hola</button>
+		<router-link to="/logout">
+			Logout
+		</router-link>
+	</section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  	name: 'Home',
+
+  	data () {
+    	return {
+
+    	}
+  	},
+
+  	mounted(){
+  		//this.getCurrentUser()
+  	},
+
+  	methods: {
+  		user(){
+        this.$store.dispatch('getCurrentUser')
+  		}
+  	}
 }
 </script>
+
+<style lang="css" scoped>
+</style>
